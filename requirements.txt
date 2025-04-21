@@ -1,0 +1,16 @@
+scikit_learn==1.5.1
+beautifulsoup4
+Flask
+googlesearch_python
+numpy
+pandas
+python_dateutil
+requests
+whois
+gunicorn
+bcrypt
+xgboost
+
+
+
+

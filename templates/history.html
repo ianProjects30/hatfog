@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>History</title>
+  <link href="/static/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+</head>
+<body class="haha">
+  <div class="container mt-5">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2>Your URL Check History</h2>
+      <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+  </div>
+      
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Status</th>
+          <th>Checked On</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in history %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>
+            {% if (row[1] * 100) < 50 %}
+              <span class="text-danger">Phishing</span>
+            {% elif (row[1] * 100) <= 80 %}
+              <span class="text-warning">Suspicious</span>
+            {% else %}
+              <span class="text-success">Safe</span>
+            {% endif %}
+          </td>
+          <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
