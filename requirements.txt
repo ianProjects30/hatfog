@@ -9,7 +9,9 @@ requests
 whois
 gunicorn
 bcrypt
-xgboost
+flask-dance
+flask-sqlalchemy
+
 
 
 

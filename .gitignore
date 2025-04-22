@@ -1,3 +1,6 @@
 .venv
 venv
 *.db
+MyApp.py
+__pycache__
+feat.py
